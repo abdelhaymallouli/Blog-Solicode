@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+<script src="https://unpkg.com/preline/dist/preline.js"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+        transition: background-color 0.3s ease;
+      }
+      .apexcharts-tooltip.apexcharts-theme-light {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+    </style>
+  </head>
+  <body class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="bg-white w-64 h-full border-r border-gray-200 transition-transform duration-300 ease-in-out transform -translate-x-64 lg:translate-x-0 fixed lg:static z-50"
+    >
+      <div
+        class="flex items-center justify-between p-6 border-b border-gray-100"
+      >
+        <h1 class="text-xl font-semibold text-blue-700">Blog Groupe 1</h1>
+        <button id="closeSidebar" class="lg:hidden text-gray-600 text-xl">
+          ✕
+        </button>
+      </div>
+
+      <nav class="p-4 space-y-2">
+        <a
+          href="dashboard_Admin.html"
+          class="flex items-center gap-3 text-gray-700 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m4-8v8M5 10v10h14V10"></path>
+          </svg>
+          Dashboard
+        </a>
+        <a href="dashboard_Admin_articles.html" class="flex items-center gap-3 text-gray-700 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition" >
+      
+         <i class="fa-solid fa-newspaper"></i> Articles
+        </a>
+        <a
+          href="dashboard_Admin_Categories.html"
+          class="flex items-center gap-3 text-gray-700 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+        >
+         
+          <i class="fa-solid fa-layer-group"></i>Categories
+        </a>
+
+
+       <a
+            href="dashboard_Admin_Users.html"
+          class="flex items-center gap-3 text-gray-700 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+        >
+      
+          <i class="fa-solid fa-user"></i>Users
+        </a>
+                 <a
+          href="#"
+          class="flex items-center gap-3 text-gray-700 p-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition"
+        >
+      
+            <i class="fa-solid fa-gear"></i>Settings
+        </a>
+      
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex flex-col flex-1 w-full">
+      <!-- Navbar -->
+      <header
+        class="flex items-center justify-between bg-white shadow-sm px-6 py-4 border-b border-gray-200"
+      >
+        <div class="flex items-center gap-3">
+          <button id="openSidebar" class="lg:hidden text-gray-700 text-2xl">
+            ☰
+          </button>
+          <h2 class="text-lg font-semibold text-slate-800">Dashboard Admin- Setting</h2>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="text-gray-600 hover:text-blue-600 transition">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+               <!-- Account Dropdown -->
+      <div class="hs-dropdown relative inline-block" data-hs-dropdown>
+        <button class="flex items-center gap-2 rounded-full hover:bg-gray-200 p-1">
+          <img class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb" alt="Avatar">
+        </button>
+
+        <div class="hs-dropdown-menu hidden absolute right-0 mt-2 min-w-48 bg-white border border-gray-200 rounded-xl shadow-lg z-10">
+          <div class="p-4">
+            <span class="font-medium text-gray-800">Mehdi Ben Taleb</span>
+            <p class="text-sm text-gray-500">mehdibentaleb548@gmail.com</p>
+          </div>
+          <div class="border-t border-gray-200 py-2">
+            <a href="setting_page_admin.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"><i class="fa-solid fa-gear"></i> Settings</a>
+            <a href="../login.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+          </div>
+        </div>
+      </div>
+      <!-- End Dropdown -->
+        </div>
+      </header>
+
+  <!-- Dashboard -->
+  <main class="flex-1 px-6 overflow-y-auto">
+
+
+<!-- Card Section -->
+<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-8 mx-auto "><!-- Card -->
+  <div class="bg-white rounded-xl shadow-xs p-4 sm:p-7 border border-grey-500">
+    <div class="mb-8">
+      <h2 class="text-xl font-bold text-gray-800">
+        Profile
+      </h2>
+      <p class="text-sm text-gray-600">
+        Manage your name, password and account settings.
+      </p>
+    </div>
+
+    <form class="">
+      <!-- Grid -->
+      <div class="grid sm:grid-cols-12 gap-2 sm:gap-6 ">
+        <div class="sm:col-span-3">
+          <label class="inline-block text-sm text-gray-800 mt-2.5">
+            Profile photo
+          </label>
+        </div>
+        <!-- End Col -->
+
+<div class="sm:col-span-9">
+  <div class="flex items-center gap-5">
+
+    <!-- Preview Image -->
+    <img id="previewImage"
+         class="inline-block size-16 rounded-full ring-2 ring-white object-cover"
+         src="https://preline.co/assets/img/160x160/img1.jpg"
+         alt="Avatar">
+
+    <div class="flex gap-x-2">
+      <div>
+
+        <!-- Upload Button -->
+        <button type="button"
+                id="uploadBtn"
+                class="py-2 px-3 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden">
+          <svg class="shrink-0 size-4"
+               xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" x2="12" y1="3" y2="15"/>
+          </svg>
+          Upload photo
+        </button>
+
+        <!-- Hidden File Input -->
+        <input type="file"
+               id="fileInput"
+               class="hidden"
+               accept="image/*">
+
+        <!-- Error Message -->
+        <p id="errorMsg" class="text-red-600 text-xs mt-1 hidden"></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- End Col -->
+
+        <div class="sm:col-span-3">
+          <label for="af-account-full-name" class="inline-block text-sm text-gray-800 mt-2.5">
+            Full name
+          </label>
+          <div class="hs-tooltip inline-block">
+            <svg class="hs-tooltip-toggle ms-1 inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg>
+            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible w-40 text-center z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded-md shadow-2xs" role="tooltip">
+              Displayed on public forums, such as Preline
+            </span>
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="sm:col-span-9">
+          <div class="sm:flex">
+            <input id="af-account-full-name" type="text" class="py-2 sm:py-3 px-3 pe-11 block w-full border border-gray-200 shadow-2xs -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg sm:text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Mehdi">
+            <input type="text" class="py-1.5 sm:py-3 px-3 pe-11 block w-full border border-gray-200 shadow-2xs -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg sm:text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Ben Taleb">
+          </div>
+        </div>
+        <!-- End Col -->
+
+        <div class="sm:col-span-3">
+          <label for="af-account-email" class="inline-block text-sm text-gray-800 mt-2.5">
+            Email
+          </label>
+        </div>
+        <!-- End Col -->
+
+        <div class="sm:col-span-9">
+          <input id="af-account-email" type="email" class="py-1.5 sm:py-3 px-3 pe-11 block w-full border border-gray-200 shadow-2xs sm:text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Mehdibentaleb@site.com">
+        </div>
+        <!-- End Col -->
+
+        <div class="sm:col-span-3">
+          <label for="af-account-password" class="inline-block text-sm text-gray-800 mt-2.5">
+            Password
+          </label>
+        </div>
+        <!-- End Col -->
+
+        <div class="sm:col-span-9">
+          <div class="flex gap-4 w-full">
+                    <!-- Password -->
+                <div class="w-full">
+                  <!-- Form Group -->
+                  <div class="w-full">
+                    <div class="relative">
+                      <input id="hs-toggle-password" type="password" class="py-1.5 sm:py-3 px-3 pe-11 block w-full border border-gray-200 shadow-2xs sm:text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter password" >
+                      <button type="button" data-hs-toggle-password='{
+                          "target": "#hs-toggle-password"
+                        }' class="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-hidden focus:text-blue-600">
+                        <svg class="shrink-0 size-3.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path class="hs-password-active:hidden" d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                          <path class="hs-password-active:hidden" d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+                          <path class="hs-password-active:hidden" d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+                          <line class="hs-password-active:hidden" x1="2" x2="22" y1="2" y2="22"></line>
+                          <path class="hidden hs-password-active:block" d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                          <circle class="hidden hs-password-active:block" cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Form Group -->
+                  </div>
+
+                  <!-- Confirm Password -->
+                  <div class="w-full">
+                   
+                  <!-- Form Group -->
+                  <div class="w-full">
+                    <div class="relative ">
+                      <input id="hs-toggle-password2" type="password" class="py-1.5 sm:py-3 px-3 pe-11 block w-full border border-gray-200 shadow-2xs sm:text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter password" >
+                      <button type="button" data-hs-toggle-password='{
+                          "target": "#hs-toggle-password2"
+                        }' class="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-hidden focus:text-blue-600">
+                        <svg class="shrink-0 size-3.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path class="hs-password-active:hidden" d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                          <path class="hs-password-active:hidden" d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+                          <path class="hs-password-active:hidden" d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+                          <line class="hs-password-active:hidden" x1="2" x2="22" y1="2" y2="22"></line>
+                          <path class="hidden hs-password-active:block" d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                          <circle class="hidden hs-password-active:block" cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Form Group -->
+                  </div>
+              </div>
+        </div>
+      
+     
+
+       
+      </div>
+      <!-- End Grid -->
+
+      <div class="mt-5 flex justify-end gap-x-2">
+        <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+          Save changes
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- End Card -->
+</div>
+<!-- End Card Section -->
+
+    </main>
+    </div>
+
+    <!-- JS for sidebar toggle -->
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const openSidebar = document.getElementById("openSidebar");
+      const closeSidebar = document.getElementById("closeSidebar");
+
+      openSidebar.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-64");
+      });
+
+      closeSidebar.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-64");
+      });
+      
+
+        const uploadBtn = document.getElementById("uploadBtn");
+  const fileInput = document.getElementById("fileInput");
+  const preview = document.getElementById("previewImage");
+  const error = document.getElementById("errorMsg");
+
+  // Open file selector when button is clicked
+  uploadBtn.addEventListener("click", () => fileInput.click());
+
+  // Handle file selection
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    error.classList.add("hidden");
+    error.textContent = "";
+
+    if (!file) return;
+
+    // Validate type
+    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+    if (!validTypes.includes(file.type)) {
+      error.textContent = "Only JPG, JPEG, or PNG are allowed.";
+      error.classList.remove("hidden");
+      fileInput.value = "";
+      return;
+    }
+
+    // Validate size (2MB)
+    if (file.size > 2 * 1024 * 1024) {
+      error.textContent = "Maximum file size is 2MB.";
+      error.classList.remove("hidden");
+      fileInput.value = "";
+      return;
+    }
+
+    // Display preview
+    const reader = new FileReader();
+    reader.onload = e => {
+      preview.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+    </script>
+
+<!-- APEXCHARTS -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+
+
+
+  </body>
+</html>

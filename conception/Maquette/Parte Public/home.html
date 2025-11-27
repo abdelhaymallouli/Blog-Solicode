@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil - Blog Group-1</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Smooth fade + slide effect */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+     @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .float-animation {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.3; }
+        }
+        
+        .shimmer {
+            animation: shimmer 3s ease-in-out infinite;
+        }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- HEADER / NAVIGATION -->
+    <nav class="bg-white shadow-md fade-in">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="home.html" class="text-xl font-bold text-gray-800">
+            Blog Group-1
+          </a>
+
+          <!-- Desktop Links -->
+          <div class="hidden md:flex space-x-8">
+            <a href="home.html" class="text-blue-600 font-medium border-b-2 border-blue-600 pb-1">Accueil</a>
+            <a href="favorites.html" class="text-gray-600 hover:text-blue-600 transition">Favoris</a>
+            <a href="login.html" class="text-gray-600 hover:text-blue-600 transition">Login</a>
+          </div>
+
+          <!-- Hamburger button for mobile -->
+          <div class="md:hidden flex items-center">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md px-4 py-4 space-y-2">
+          <a href="home.html" class="block text-blue-600 font-medium border-b-2 border-blue-600 pb-1">Accueil</a>
+          <a href="favorites.html" class="block text-gray-600 hover:text-blue-600 transition">Favoris</a>
+          <a href="login.html" class="block text-gray-600 hover:text-blue-600 transition">Login</a>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+    <!-- MAIN CONTENT - ARTICLE LIST -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Recent Articles Section -->
+      <section class="mb-16 fade-in">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Articles Récents</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Article Cards -->
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in">
+            <div class="p-6">
+              <span class="inline-block bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">Nouveau</span>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Projet d'irrigation au village de Tinjdad</h3>
+              <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore...</p>
+              <p class="text-sm text-gray-500 mb-4">Publié le: 28 Oct 2025</p>
+              <a href="detail.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition">Lire plus</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in">
+            <div class="p-6">
+              <span class="inline-block bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">Populaire</span>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Formation des femmes artisanes</h3>
+              <p class="text-gray-600 mb-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip...</p>
+              <p class="text-sm text-gray-500 mb-4">Publié le: 25 Oct 2025</p>
+              <a href="detail.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition">Lire plus</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3 mt-8">Programme d'éducation au désert</h3>
+              <p class="text-gray-600 mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
+              <p class="text-sm text-gray-500 mb-4">Publié le: 22 Oct 2025</p>
+              <a href="detail.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition">Lire plus</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Articles Section -->
+      <section class="fade-in">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Articles Populaires</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in">
+            <div class="p-6">
+              <span class="inline-block bg-yellow-500 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full mb-3">Tendance</span>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Collecte de fonds pour l'école rurale</h3>
+              <p class="text-gray-600 mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia...</p>
+              <p class="text-sm text-gray-500 mb-4">Publié le: 20 Oct 2025</p>
+              <a href="detail.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition">Lire plus</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3 mt-8">Installation de panneaux solaires</h3>
+              <p class="text-gray-600 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...</p>
+              <p class="text-sm text-gray-500 mb-4">Publié le: 18 Oct 2025</p>
+              <a href="detail.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition">Lire plus</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden fade-in">
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3 mt-8">Caravane médicale dans le Sahara</h3>
+              <p class="text-gray-600 mb-4">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit...</p>
+              <p class="text-sm text-gray-500 mb-4">Publié le: 15 Oct 2025</p>
+              <a href="detail.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition">Lire plus</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16 fade-in">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-white text-xl font-bold mb-4">Errachidia – Sahara Solidaire</h3>
+          <p class="text-gray-400 mb-4">Connecter et rendre visibles les initiatives solidaires du Tafilalet.</p>
+          <p class="text-gray-500 text-sm">&copy; 2025 Tous droits réservés.</p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Liens utiles</h4>
+          <ul class="space-y-2">
+            <li><a href="home.html" class="hover:text-blue-400">Accueil</a></li>
+            <li><a href="about.html" class="hover:text-blue-400">À propos</a></li>
+            <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+            <li><a href="login.html" class="hover:text-blue-400">Connexion</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Suivez-nous</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+          <p class="mt-6 text-sm text-gray-500">Email : contact@BlogGroup-1.ma</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS for Mobile Menu & Scroll Animation -->
+    <script>
+      // Toggle mobile menu
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Scroll animation
+      const faders = document.querySelectorAll(".fade-in");
+      const appearOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          appearOnScroll.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    </script>
+  </body>
+</html>
