@@ -5,7 +5,6 @@
 ## 📌 Travail à faire
 
 * Créer la **page Accueil** du Blog Solicode
-* Mettre en place la structure Blade
 * Respecter la maquette fournie
 * Utiliser GitHub avec des branches
 * Créer un Pull Request pour validation
