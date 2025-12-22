@@ -24,13 +24,7 @@
 
 ## 🧪 Labs
 
-* **Branch Roles**
-
-  * Création de branches
-  * Pull Request
-  * Review & Approval
-  * Merge vers la branche principale
-
+* **Branch Rules**
 ---
 
 
