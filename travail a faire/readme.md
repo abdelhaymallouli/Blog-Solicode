@@ -38,11 +38,11 @@
 
 
 
-## 📦 Livrables
+## 📦 Livrables Sprint 1 
 
-* Dépôt GitHub du projet
 * Code source Laravel
 * Page Accueil fonctionnelle
+* creation presentation sprint 1
 * README.md complété
 
 ---
