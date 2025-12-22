@@ -1,19 +1,6 @@
 # 📘 Blog Solicode
 
-## 📝 Description du projet
 
-**Blog Solicode** est un projet pédagogique visant à créer la page d’accueil
-
----
-
-## 🎯 Objectifs du projet
-
-* Comprendre la structure d’un projet Laravel
-* Créer une **page d’accueil (Accueil)** fonctionnelle
-* Appliquer les **branch roles** et le workflow GitHub
-* Travailler avec des Pull Requests et Reviews
-
----
 
 ## 📌 Travail à faire
 
@@ -22,6 +9,19 @@
 * Respecter la maquette fournie
 * Utiliser GitHub avec des branches
 * Créer un Pull Request pour validation
+
+---
+
+
+## 👨‍💻 Réalisé par
+
+* **Abdelhay Mallouli**
+
+---
+
+## 👨‍🏫 Encadré par
+
+* **Essaraj Fouad**
 
 ---
 
@@ -44,18 +44,5 @@
 * Page Accueil fonctionnelle
 * creation presentation sprint 1
 * README.md complété
-
----
----
-
-## 👨‍💻 Réalisé par
-
-* **Abdelhay Mallouli**
-
----
-
-## 👨‍🏫 Encadré par
-
-* **Essaraj Fouad**
 
 ---
