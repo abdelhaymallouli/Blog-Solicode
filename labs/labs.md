@@ -1,27 +1,38 @@
-# 🧪 LAB: Branch Roles & Pull Requests in GitHub
+Parfait 👍
+Voici **la version enrichie de ton LAB**, avec **toutes les Branch Rules expliquées clairement + les étapes pour les configurer**, adaptée à un **niveau débutant / intermédiaire** et prête à être mise dans un **README.md**.
+
+---
+
+# 🧪 LAB : Branch Roles, Branch Rules & Pull Requests in GitHub
 
 ## 🎯 Objectif du Lab
 
-Comprendre les **rôles des branches** dans GitHub et apprendre à les utiliser correctement avec les **Pull Requests** afin de travailler en équipe de manière professionnelle.
+Comprendre :
+
+* Les **rôles des branches**
+* Le fonctionnement des **Pull Requests**
+* Les **Branch Rules (règles de protection)** dans GitHub
+  afin de travailler en équipe de manière **professionnelle et sécurisée**.
 
 ---
 
 ## 🧠 Concepts Clés
 
-* Une **branch** permet de travailler sur une fonctionnalité sans casser le code principal.
-* Une **Pull Request (PR)** permet de proposer des changements pour qu'ils soient **revus et validés** avant fusion.
-* Les **branch rules** protègent les branches importantes comme `main`.
+* Une **branch** permet de développer une fonctionnalité sans affecter le code stable.
+* Une **Pull Request (PR)** permet de proposer des changements pour révision avant fusion.
+* Les **Branch Rules** empêchent les erreurs (push direct, fusion sans review, etc.).
+* La branche `main` doit toujours contenir un **code stable**.
 
 ---
 
 ## 🔀 Rôles des Branches
 
-| Branch      | Rôle                                |
-| ----------- | ----------------------------------- |
-| `main`      | 🔒 Code stable / production         |
-| `develop`   | 🧪 Intégration et tests             |
-| `feature/*` | 🛠 Développement de fonctionnalités |
-| `bugfix/*`  | 🐛 Correction de bugs               |
+| Branch      | Rôle                                  |
+| ----------- | ------------------------------------- |
+| `main`      | 🔒 Version finale / production        |
+| `develop`   | 🧪 Intégration des fonctionnalités    |
+| `feature/*` | 🛠 Développement d’une fonctionnalité |
+| `bugfix/*`  | 🐛 Correction de bugs                 |
 
 ---
 
@@ -29,21 +40,24 @@ Comprendre les **rôles des branches** dans GitHub et apprendre à les utiliser 
 
 Vous travaillez sur un projet en équipe.
 
-Règles :
+### Règles du projet :
 
 * ❌ Interdiction de pousser directement sur `main`
-* ✅ Toute modification passe par une **Pull Request**
+* ❌ Interdiction de fusionner sans Pull Request
+* ✅ Chaque modification passe par une PR
 * 👀 Les PR doivent être **revues et approuvées**
 
 ---
 
 ## 🧪 Partie 1 : Création d’une Feature Branch
 
+Créer une branche pour une fonctionnalité :
+
 ```bash
 git checkout -b feature/add-homepage
 ```
 
-Modifier un fichier (ex: README.md).
+Modifier un fichier (ex: `README.md`).
 
 ```bash
 git add .
@@ -55,46 +69,128 @@ git push -u origin feature/add-homepage
 
 ## 🧪 Partie 2 : Créer une Pull Request
 
-1. Aller sur GitHub
+1. Aller sur **GitHub**
 2. Cliquer sur **Compare & pull request**
-3. Sélectionner :
+3. Choisir :
 
-   * Base: `develop`
-   * Compare: `feature/add-homepage`
+   * **Base branch** : `develop`
+   * **Compare branch** : `feature/add-homepage`
 4. Cliquer sur **Create Pull Request**
 
 ---
 
-## 🧪 Partie 3 : Rôles dans la Pull Request
+## 🧪 Partie 3 : Rôles dans une Pull Request
 
-| Rôle       | Description          |
-| ---------- | -------------------- |
-| Auteur     | Crée la Pull Request |
-| Reviewer   | Vérifie et approuve  |
-| Maintainer | Fusionne la PR       |
+| Rôle       | Description        |
+| ---------- | ------------------ |
+| Auteur     | Crée la PR         |
+| Reviewer   | Vérifie le code    |
+| Maintainer | Valide et fusionne |
 
-Actions :
+### Actions obligatoires :
 
 * Ajouter au moins **1 reviewer**
 * Le reviewer clique sur **Approve**
 
 ---
 
-## 🧪 Partie 4 : Protection de la Branch `main`
+## 🔐 Partie 4 : Branch Rules (Règles de Protection)
 
-### Étapes :
+### 🎯 Pourquoi utiliser les Branch Rules ?
 
-1. Settings → Branches
-2. Add branch protection rule
-3. Branch name pattern : `main`
+* Empêcher les erreurs humaines
+* Forcer les bonnes pratiques
+* Sécuriser la branche `main`
 
-### Options à activer :
+---
 
-* ✔ Require pull request before merging
-* ✔ Require approvals (1 ou 2)
-* ✔ Restrict who can push
+## ⚙️ Étapes pour ajouter une Branch Rule
 
-➡ Résultat : personne ne peut pousser directement sur `main`.
+1. Aller dans **Settings**
+2. Cliquer sur **Branches**
+3. Cliquer sur **Add branch protection rule**
+4. Branch name pattern :
+
+   ```text
+   main
+   ```
+
+---
+
+## 🛡️ Toutes les Branch Rules expliquées
+
+### 1️⃣ Require a pull request before merging
+
+✔ **Obligatoire**
+
+👉 Empêche toute fusion directe sans PR.
+
+---
+
+### 2️⃣ Require approvals
+
+✔ Activer
+✔ Nombre : **1 ou 2**
+
+👉 La PR doit être approuvée par un reviewer.
+
+---
+
+### 3️⃣ Dismiss stale pull request approvals
+
+✔ Recommandé
+
+👉 Si le code change après une approbation, la review est annulée.
+
+---
+
+### 4️⃣ Require review from Code Owners
+
+✔ Optionnel
+
+👉 Force la review par des personnes spécifiques.
+
+---
+
+### 5️⃣ Restrict who can push to matching branches
+
+✔ Activer
+
+👉 Seuls les **maintainers** peuvent pousser sur `main`.
+
+---
+
+### 6️⃣ Require status checks to pass before merging
+
+✔ Optionnel (CI/CD)
+
+👉 La PR doit passer les tests avant fusion.
+
+---
+
+### 7️⃣ Require linear history
+
+✔ Optionnel
+
+👉 Empêche les merge commits désorganisés.
+
+---
+
+### 8️⃣ Include administrators
+
+✔ Recommandé
+
+👉 Même les admins doivent respecter les règles.
+
+---
+
+### 🎯 Résultat
+
+➡ Personne ne peut :
+
+* Push directement sur `main`
+* Fusionner sans review
+* Ignorer les règles
 
 ---
 
@@ -102,18 +198,18 @@ Actions :
 
 Créer une PR :
 
-* From: `develop`
-* To: `main`
+* **From** : `develop`
+* **To** : `main`
 
-Conditions :
+### Conditions obligatoires :
 
-* Review obligatoire
-* Approval obligatoire
-* Fusion par le maintainer uniquement
+* Review requise
+* Approval requise
+* Fusion uniquement par le maintainer
 
 ---
 
-## 🔁 Workflow Final
+## 🔁 Workflow Final du Projet
 
 ```text
 feature/* → develop → main
@@ -121,25 +217,5 @@ feature/* → develop → main
 
 ---
 
-## ❓ Questions du Lab
 
-1. Pourquoi la branch `main` est-elle protégée ?
-2. Quel est le rôle d’un reviewer ?
-3. Pourquoi ne pas fusionner directement `feature` dans `main` ?
 
----
-
-## ✅ Résultat Attendu
-
-À la fin de ce lab, l’étudiant est capable de :
-
-* Créer des branches avec des rôles clairs
-* Utiliser les Pull Requests correctement
-* Appliquer des règles de protection
-* Travailler en équipe sur GitHub
-
----
-
-📌 **Fichier à rendre :** README.md
-📌 **Outil utilisé :** GitHub
-📌 **Niveau :** Débutant / Intermédiaire
