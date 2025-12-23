@@ -1,12 +1,12 @@
 @startuml
 left to right direction
+actor "Visiteur" as Guest
 
-actor Visiteur
-
-rectangle "SoliCode Blog" {
-  Visiteur --> (Consulter la page d’accueil)
-  Visiteur --> (Rechercher un article)
-  Visiteur --> (Voir les articles récents)
+package "Espace Visiteur (Public)" { 
+  usecase "Consulter la page d’accueil" as UC_ACC
 }
+
+' Relations
+Guest -- UC_ACC
 
 @enduml
