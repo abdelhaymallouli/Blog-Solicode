@@ -1,7 +1,3 @@
-Parfait 👍
-Voici **la version enrichie de ton LAB**, avec **toutes les Branch Rules expliquées clairement + les étapes pour les configurer**, adaptée à un **niveau débutant / intermédiaire** et prête à être mise dans un **README.md**.
-
----
 
 # 🧪 LAB : Branch Roles, Branch Rules & Pull Requests in GitHub
 
