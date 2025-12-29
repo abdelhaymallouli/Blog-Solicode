@@ -7,11 +7,22 @@ backgroundColor: #fff
 header: '📘 Blog Solicode - Sprint 1'
 footer: 'Réalisé par Abdelhay Mallouli'
 style: |
-    img{
-    max-width: 100%;
-    height: auto;
+
+
+    .usecase {
+        width: 55%;
+        margin: auto;
+        display: block;
     }
 
+    .maquette {
+        max-height: 120vh; 
+
+        width: 50%;
+        display: block;
+        margin: auto;
+        object-fit: contain;
+    }
 ---
 
 # 📘 Blog Solicode
@@ -64,6 +75,12 @@ classDiagram
 
 ```
 ---
+
+# Maquette
+
+<img src="imgsPr/maquete.png" class="maquette">
+
+--- 
 
 
 # 🚀 Merci pour votre attention !

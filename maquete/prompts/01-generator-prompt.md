@@ -1,28 +1,27 @@
-# 🤖 Prompt : Générateur de Pages (Assemblage)
+Génère le code HTML complet de la **Page d'Accueil** en assemblant les composants statiques selon la structure ci-dessous.
 
-Ce prompt est destiné à un agent IA ou un développeur pour assembler les pages finales à partir des briques modulaires.
+## 1. Structure de Base (Le Layout)
 
-## Contexte
-Nous utilisons une architecture à base de composants statiques. Le but est de fusionner les squelettes de layouts avec les fichiers HTML unitaires.
+Utilise le fichier `components/layout/layout-base.html` comme squelette de départ.
 
-## Instructions d'Assemblage
+* **Titre de la page** : `<title>Accueil - [Nom de ton Projet]</title>`
+* **Chemins** : Assure-toi que tous les liens (CSS, Images, JS) pointent vers la racine.
 
-1. **Sélectionner le Layout** : Commencer par le fichier approprié dans `components/layout/` (ex: `layout-base.html`).
-2. **Identifier les Zones** : Repérer les placeholders visuels comme `[Composant NavBar ici]` ou les commentaires comme `<!-- [INCLUDE: ...] -->`.
-3. **Fusionner les Composants** :
-   - Remplacer le placeholder Navbar par le contenu de `components/navigation/navbar.html`.
-   - Remplacer le placeholder Footer par le contenu de `components/navigation/footer.html`.
-   - Injecter les sections spécifiques définies dans les fichiers de `specs/` (ex: Hero, Grid, Features).
-4. **Adapter le "Title"** : Mettre à jour la balise `<title>` selon la page.
-5. **Vérifier les Chemins** : S'assurer que les liens vers les images (`../../images/...`) et les pages (`index.html`, `search.html`) sont corrects une fois à la racine.
+## 2. Plan d'Assemblage (Injection)
 
-## Exemple de Flux (Accueil)
-- **Source** : `layout-base.html`
-- **Injection 1** : `navbar.html` -> `<header>`
-- **Injection 2** : `hero.html` -> `<main>`
-- **Injection 3** : `statistics.html` -> `<main>`
-- **Injection 4** : `card-article.html` (x3) -> `<div class="grid">`
-- **Injection 5** : `footer.html` -> `<footer>`
+Remplace les placeholders ou sections du layout par le contenu exact de ces fichiers :
 
-## Règle d'Or
-Le code final doit être **100% statique**, sans dépendances JS complexes autres que celles déjà incluses dans les layouts (Tailwind, Lucide, Preline).
+1. **Header** : Insérer `components/navigation/navbar.html`
+2. **Main (Contenu)** : Assembler dans cet ordre :
+* `components/sections/hero.html`
+* **Grille d'articles** : Créer une section `<div class="grid">` et y insérer **3 fois** le composant `components/cards/card-article.html`.
+
+
+3. **Footer** : Insérer `components/navigation/footer.html`
+
+## 3. Contraintes Techniques
+
+* **Zéro JS externe** : Utilise uniquement ce qui est déjà prévu (Tailwind, Lucide, Preline).
+* **Rendus propres** : Nettoie les commentaires d'assemblage (ex: supprime les ``) pour ne laisser que le HTML final.
+* **Format** : Le résultat doit être un fichier HTML unique, prêt à être sauvegardé sous `index.html`.
+
