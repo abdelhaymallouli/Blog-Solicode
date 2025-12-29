@@ -24,7 +24,7 @@
 
 ## 🧪 Labs
 
-* **Branch Rules**
+* **Github Branch**
 ---
 
 
