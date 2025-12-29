@@ -94,6 +94,24 @@ classDiagram
 
 ---
 
+
+## 🛡️ lab : github (Workflow & Sécurité GitHub)
+
+### Architecture des Branches
+
+* **`main`** : 🔒 Version stable & Production.
+* **`develop`** : 🧪 Intégration des fonctionnalités.
+* **`feature/add-homepage`** : 🛠️ Développement isolé de l'accueil.
+
+> **Workflow :** `feature/*` → `develop` → `main`
+
+### ⚙️ Règles de Protection (Branch Rules)
+* 🚫 **No Direct Push :** Interdiction de pousser sur `main`.
+* ✅ **PR Obligatoire :** Aucun changement sans revue préalable.
+* 👀 **Approbation Requise :** Validation humaine nécessaire pour fusionner.
+
+---
+
 # 🚀 Merci pour votre attention !
 
 **Questions ?**
