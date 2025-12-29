@@ -82,6 +82,17 @@ classDiagram
 
 --- 
 
+## 🛡️ Validation & Revue Pair
+
+**Apprenant :** Safa El Gharras  
+**Date :** 20/12/2025
+
+
+* ⚠️ **Tags :** Non cliquables (Correction en cours)
+* ✅ **Profil :** Gestion fonctionnelle
+* ✅ **Notifications :** Paramètres validés
+
+---
 
 # 🚀 Merci pour votre attention !
 
