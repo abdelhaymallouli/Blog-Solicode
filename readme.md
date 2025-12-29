@@ -63,8 +63,8 @@ classDiagram
     }
 
 ```
-
 ---
+
 
 # 🚀 Merci pour votre attention !
 
