@@ -6,6 +6,12 @@ paginate: true
 backgroundColor: #fff
 header: '📘 Blog Solicode - Sprint 1'
 footer: 'Réalisé par Abdelhay Mallouli'
+style: |
+    img{
+    max-width: 100%;
+    height: auto;
+    }
+
 ---
 
 # 📘 Blog Solicode
@@ -36,9 +42,29 @@ A la fin de ce sprint, les éléments suivants seront opérationnels :
 
 ---
 
+# 👥 Perspective Utilisateur
 
+![cas d'utilisation](imgsPr/usecase.png)
 
+--- 
 
+# 🔹 Fonctionnalités
+
+L'accueil repose sur quatre piliers techniques majeurs :
+
+```mermaid
+classDiagram
+    direction RL
+    class HomePageController {
+        +getPublicArticles(filters)
+        +getBySlug(slug)
+        +getCategories()
+        +getTags()
+    }
+
+```
+
+---
 
 # 🚀 Merci pour votre attention !
 
